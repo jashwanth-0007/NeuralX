@@ -1717,61 +1717,71 @@ footer p {
     }
 }
 /* =========================================================
-   NEURALX TRACKS - 2 x 2 LAYOUT
+   NEURALX TRACKS - FINAL 2 x 2 LAYOUT
    ========================================================= */
 
 .tracks-grid {
-    width: min(1250px, calc(100% - 80px)) !important;
+    width: calc(100% - 120px) !important;
     max-width: 1250px !important;
+
     margin: 0 auto !important;
 
     display: grid !important;
+
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 
     gap: 20px !important;
+
     align-items: stretch !important;
-    justify-items: stretch !important;
 }
 
-.track-card {
+
+.tracks-grid .track-card {
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
 
-    grid-column: auto !important;
-    grid-row: auto !important;
-}
-
-/* Keep the four cards equal in size */
-
-.tracks-grid .track-card {
     min-height: 340px !important;
+
+    grid-column: auto !important;
 }
 
 
-/* Tablet */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
 
     .tracks-grid {
-        width: calc(100% - 40px) !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        width: calc(100% - 60px) !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
     }
 
 }
 
 
-/* Mobile */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
 
     .tracks-grid {
+
         width: calc(100% - 30px) !important;
-        grid-template-columns: 1fr !important;
+
+        grid-template-columns:
+            1fr !important;
+
         gap: 16px !important;
     }
 
+
     .tracks-grid .track-card {
+
         min-height: 300px !important;
     }
 
