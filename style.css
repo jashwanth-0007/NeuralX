@@ -816,6 +816,14 @@ a {
 .tracks-section {
     background: rgba(255,255,255,0.01);
 }
+/* Allow the tracks section to use the full page width */
+
+.tracks-section,
+#tracks,
+.tracks {
+    width: 100% !important;
+    max-width: none !important;
+}
 
 .tracks-grid {
     display: grid;
@@ -1717,33 +1725,68 @@ footer p {
     }
 }
 /* =========================================================
-   NEURALX TRACKS - FINAL 2 x 2 LAYOUT
+   NEURALX TRACKS - CLEAN 2 x 2 LAYOUT
    ========================================================= */
 
 .tracks-grid {
-    width: calc(100% - 120px) !important;
+    width: 100% !important;
     max-width: 1250px !important;
 
     margin: 0 auto !important;
+    padding: 0 20px !important;
 
     display: grid !important;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
 
-    gap: 20px !important;
+    gap: 24px !important;
 
-    align-items: stretch !important;
+    box-sizing: border-box !important;
 }
 
 
+/* Individual cards */
+
 .tracks-grid .track-card {
     width: 100% !important;
-    min-width: 0 !important;
     max-width: none !important;
+    min-width: 0 !important;
 
-    min-height: 340px !important;
+    min-height: 330px !important;
+
+    padding: 38px !important;
+
+    box-sizing: border-box !important;
 
     grid-column: auto !important;
+}
+
+
+/* Track title */
+
+.tracks-grid .track-card h3 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+
+    margin-bottom: 18px !important;
+}
+
+
+/* Track description */
+
+.tracks-grid .track-card p {
+    max-width: 520px !important;
+
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* Track icon */
+
+.tracks-grid .track-icon {
+    margin-bottom: 70px !important;
 }
 
 
@@ -1754,10 +1797,28 @@ footer p {
 @media (max-width: 900px) {
 
     .tracks-grid {
-        width: calc(100% - 60px) !important;
+
+        padding: 0 15px !important;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 18px !important;
+    }
+
+
+    .tracks-grid .track-card {
+
+        min-height: 300px !important;
+
+        padding: 28px !important;
+    }
+
+
+    .tracks-grid .track-card h3 {
+
+        font-size: 24px !important;
+
     }
 
 }
@@ -1771,18 +1832,35 @@ footer p {
 
     .tracks-grid {
 
-        width: calc(100% - 30px) !important;
-
         grid-template-columns:
             1fr !important;
 
         gap: 16px !important;
+
+        padding: 0 10px !important;
     }
 
 
     .tracks-grid .track-card {
 
-        min-height: 300px !important;
+        min-height: 280px !important;
+
+        padding: 25px !important;
+
+    }
+
+
+    .tracks-grid .track-card h3 {
+
+        font-size: 23px !important;
+
+    }
+
+
+    .tracks-grid .track-icon {
+
+        margin-bottom: 50px !important;
+
     }
 
 }
