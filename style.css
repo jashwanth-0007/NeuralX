@@ -2208,3 +2208,100 @@ footer p {
         font-size: 26px;
     }
 }
+/* =========================================================
+   TIMELINE SCHEDULE BUTTON
+   ========================================================= */
+
+#timeline > .secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    min-width: 245px;
+    height: 48px;
+
+    margin-top: 38px;
+    margin-left: 0;
+
+    padding: 0 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    background: rgba(255, 255, 255, 0.015);
+
+    color: #b5b5b5;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    letter-spacing: 0.2px;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Arrow / visual indicator */
+
+#timeline > .secondary-button::after {
+    content: "→";
+
+    margin-left: 14px;
+
+    color: #00ffff;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* Hover */
+
+#timeline > .secondary-button:hover {
+
+    color: #ffffff;
+
+    border-color:
+        rgba(0, 255, 255, 0.55);
+
+    background:
+        rgba(0, 255, 255, 0.035);
+
+    transform: translateY(-2px);
+}
+
+
+#timeline > .secondary-button:hover::after {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    #timeline > .secondary-button {
+
+        width: 100%;
+        max-width: 280px;
+
+        min-width: 0;
+
+        height: 46px;
+
+        margin-top: 30px;
+    }
+
+}
