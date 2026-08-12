@@ -1642,3 +1642,256 @@ footer p {
         flex-wrap: wrap;
     }
 }
+/* =========================================================
+   FINAL FIX FOR TRACKS / DOMAINS
+   ========================================================= */
+
+.tracks {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 120px 7% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+
+/* Section heading */
+
+.tracks .section-heading {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto 60px !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   FULL WIDTH 2 x 2 GRID
+   ========================================================= */
+
+.tracks .tracks-grid {
+    display: grid !important;
+
+    width: 100% !important;
+    max-width: 1200px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr) !important;
+
+    grid-template-rows:
+        auto
+        auto !important;
+
+    gap: 24px !important;
+
+    position: static !important;
+
+    left: auto !important;
+    right: auto !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   ALL FOUR CARDS
+   ========================================================= */
+
+.tracks .tracks-grid .track-card {
+    display: flex !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    min-height: 340px !important;
+
+    margin: 0 !important;
+    padding: 38px !important;
+
+    box-sizing: border-box !important;
+
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    position: relative !important;
+}
+
+
+/* Force correct positions */
+
+.tracks .tracks-grid .track-card:nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+}
+
+.tracks .tracks-grid .track-card:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+.tracks .tracks-grid .track-card:nth-child(3) {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+}
+
+.tracks .tracks-grid .track-card:nth-child(4) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.tracks .track-icon {
+    width: 62px !important;
+    height: 62px !important;
+
+    flex-shrink: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+.tracks .track-content {
+    margin-top: auto !important;
+
+    padding-top: 45px !important;
+    padding-right: 20px !important;
+}
+
+
+.tracks .track-content h3 {
+    font-size: 28px !important;
+
+    line-height: 1.2 !important;
+
+    margin-bottom: 16px !important;
+}
+
+
+.tracks .track-content p {
+    max-width: 600px !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.7 !important;
+}
+
+
+/* =========================================================
+   DESKTOP - MAKE THE GRID WIDER
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    .tracks .tracks-grid {
+        width: 100% !important;
+        max-width: 1250px !important;
+
+        gap: 24px !important;
+    }
+
+    .tracks .tracks-grid .track-card {
+        min-height: 340px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .tracks {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    .tracks .tracks-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 18px !important;
+    }
+
+    .tracks .tracks-grid .track-card {
+        min-height: 310px !important;
+
+        padding: 30px !important;
+    }
+
+    .tracks .track-content h3 {
+        font-size: 24px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .tracks {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    .tracks .tracks-grid {
+        width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+
+        grid-template-rows:
+            repeat(4, auto) !important;
+
+        gap: 16px !important;
+    }
+
+
+    .tracks .tracks-grid .track-card:nth-child(1),
+    .tracks .tracks-grid .track-card:nth-child(2),
+    .tracks .tracks-grid .track-card:nth-child(3),
+    .tracks .tracks-grid .track-card:nth-child(4) {
+
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+
+
+    .tracks .tracks-grid .track-card {
+        min-height: 290px !important;
+
+        padding: 28px !important;
+    }
+
+
+    .tracks .track-content {
+        padding-top: 35px !important;
+        padding-right: 10px !important;
+    }
+
+
+    .tracks .track-content h3 {
+        font-size: 23px !important;
+    }
+}
