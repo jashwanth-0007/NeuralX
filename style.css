@@ -829,29 +829,39 @@ a {
 
 /* =========================================================
    TRACKS / DOMAINS
-   CLEAN 2 x 2 LAYOUT
    ========================================================= */
 
 .tracks-section {
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 
     background: rgba(255, 255, 255, 0.01);
 }
 
 .tracks {
     width: 100%;
+    max-width: 100%;
+
+    margin: 0;
 
     padding: 130px 7%;
 
     position: relative;
+
+    overflow: visible;
 }
 
 .tracks .section-heading {
     width: 100%;
 
-    max-width: 700px;
+    max-width: 900px;
 
-    margin: 0 auto 55px;
+    margin: 0 auto 60px;
+
+    text-align: left;
 }
 
 .tracks .section-heading > span {
@@ -893,38 +903,51 @@ a {
 }
 
 
-/* -------------------------
+/* =========================================================
    TRACK GRID
-   ------------------------- */
+   ========================================================= */
 
 .tracks-grid {
     width: 100%;
 
-    max-width: 1250px;
+    max-width: 1200px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-rows: repeat(2, auto);
 
     gap: 24px;
+
+    position: static;
+
+    left: auto;
+
+    right: auto;
+
+    transform: none;
 }
 
 
-/* -------------------------
+/* =========================================================
    TRACK CARD
-   ------------------------- */
+   ========================================================= */
 
 .track-card {
     width: 100%;
 
     min-width: 0;
 
-    min-height: 335px;
+    max-width: none;
+
+    min-height: 340px;
 
     padding: 38px;
+
+    margin: 0;
 
     border: 1px solid #202025;
 
@@ -937,6 +960,8 @@ a {
     flex-direction: column;
 
     overflow: hidden;
+
+    box-sizing: border-box;
 
     transition:
         transform 0.35s ease,
@@ -968,8 +993,7 @@ a {
 .track-card:hover {
     transform: translateY(-6px);
 
-    border-color:
-        rgba(0, 255, 255, 0.45);
+    border-color: rgba(0, 255, 255, 0.45);
 }
 
 .track-card:hover::before {
@@ -977,14 +1001,13 @@ a {
 }
 
 .track-card.active {
-    border-color:
-        rgba(0, 255, 255, 0.7);
+    border-color: rgba(0, 255, 255, 0.7);
 }
 
 
-/* -------------------------
+/* =========================================================
    TRACK ICON
-   ------------------------- */
+   ========================================================= */
 
 .track-icon {
     width: 62px;
@@ -1001,9 +1024,7 @@ a {
 
     color: #00ffff;
 
-    font-family:
-        "Space Grotesk",
-        sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 
     font-size: 14px;
 
@@ -1011,30 +1032,28 @@ a {
 }
 
 
-/* -------------------------
+/* =========================================================
    TRACK CONTENT
-   ------------------------- */
+   ========================================================= */
 
 .track-content {
     position: relative;
 
     margin-top: auto;
 
-    padding-top: 55px;
+    padding-top: 45px;
 
-    padding-right: 40px;
+    padding-right: 20px;
 }
 
 .track-content h3 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 
-    font-size: 27px;
+    font-size: 28px;
 
     line-height: 1.2;
 
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .track-content p {
@@ -1042,9 +1061,9 @@ a {
 
     color: #666;
 
-    font-size: 13px;
+    font-size: 14px;
 
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .track-number {
@@ -1056,9 +1075,7 @@ a {
 
     color: #333;
 
-    font-family:
-        "Space Grotesk",
-        sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 
     font-size: 12px;
 }
@@ -1077,8 +1094,7 @@ a {
 .timeline-item {
     display: grid;
 
-    grid-template-columns:
-        30px 1fr 100px;
+    grid-template-columns: 30px 1fr 100px;
 
     gap: 25px;
 
@@ -1206,8 +1222,7 @@ a {
 .prize-card.first {
     min-height: 330px;
 
-    border-color:
-        rgba(0, 255, 255, 0.5);
+    border-color: rgba(0, 255, 255, 0.5);
 }
 
 .prize-position {
@@ -1460,19 +1475,29 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    /* Tracks stay 2 x 2 on tablet */
     .tracks {
         padding: 110px 5%;
     }
 
+    .tracks .section-heading {
+        max-width: 760px;
+
+        margin-bottom: 50px;
+    }
+
     .tracks-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        width: 100%;
+
+        max-width: 900px;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         gap: 20px;
     }
 
     .track-card {
-        min-height: 310px;
+        min-height: 320px;
 
         padding: 30px;
     }
@@ -1541,18 +1566,23 @@ footer p {
         max-width: 100%;
     }
 
-    /* Tracks become one column on mobile */
-
+    /* One card per row on mobile */
     .tracks {
         padding: 90px 5%;
     }
 
     .tracks .section-heading {
         max-width: 100%;
+
+        margin-bottom: 40px;
     }
 
     .tracks-grid {
+        width: 100%;
+
         grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
 
         gap: 16px;
     }
@@ -1564,11 +1594,17 @@ footer p {
     }
 
     .track-content {
-        padding-top: 45px;
+        padding-top: 35px;
+
+        padding-right: 10px;
     }
 
     .track-content h3 {
         font-size: 23px;
+    }
+
+    .track-content p {
+        font-size: 13px;
     }
 
     .prizes {
@@ -1585,8 +1621,7 @@ footer p {
     }
 
     .timeline-item {
-        grid-template-columns:
-            20px 1fr;
+        grid-template-columns: 20px 1fr;
 
         gap: 15px;
     }
@@ -1606,133 +1641,4 @@ footer p {
     .footer-links {
         flex-wrap: wrap;
     }
-}
-/* =========================================================
-   FINAL FIX - MAKE TRACKS USE FULL PAGE WIDTH
-   ========================================================= */
-
-.tracks {
-    width: 100vw !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: 7vw !important;
-    padding-right: 7vw !important;
-
-    overflow: visible !important;
-}
-
-
-/* Force the grid out of any narrow parent container */
-
-.tracks-grid {
-    position: relative !important;
-
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    width: 86vw !important;
-    max-width: 1250px !important;
-
-    margin: 0 !important;
-
-    display: grid !important;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr)) !important;
-
-    gap: 24px !important;
-
-    box-sizing: border-box !important;
-}
-
-
-/* Make every card equal */
-
-.tracks-grid .track-card {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-
-    min-height: 350px !important;
-
-    box-sizing: border-box !important;
-
-    grid-column: auto !important;
-    grid-row: auto !important;
-}
-
-
-/* Keep the content nicely positioned */
-
-.tracks-grid .track-content {
-    margin-top: auto !important;
-
-    padding-top: 50px !important;
-    padding-right: 20px !important;
-}
-
-.tracks-grid .track-content h3 {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-}
-
-.tracks-grid .track-content p {
-    max-width: 500px !important;
-
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .tracks {
-        width: 100% !important;
-
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-    }
-
-    .tracks-grid {
-        left: 0 !important;
-
-        transform: none !important;
-
-        width: 100% !important;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr)) !important;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .tracks {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    .tracks-grid {
-        grid-template-columns: 1fr !important;
-
-        gap: 16px !important;
-    }
-
-    .tracks-grid .track-card {
-        min-height: 300px !important;
-    }
-
 }
