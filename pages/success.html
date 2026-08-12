@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Registration Successful | NeuralX
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/success.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Background -->
+
+    <div class="background-grid"></div>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+
+    <!-- Success Container -->
+
+    <main class="success-container">
+
+
+        <!-- NeuralX -->
+
+        <div class="logo">
+
+            NEURAL<span>X</span>
+
+        </div>
+
+
+        <!-- Success Icon -->
+
+        <div class="success-icon">
+
+            ✓
+
+        </div>
+
+
+        <!-- Heading -->
+
+        <h1>
+            Registration Successful
+        </h1>
+
+
+        <p class="success-description">
+
+            Congratulations!
+            Your team has been successfully
+            registered for NeuralX 2026.
+
+        </p>
+
+
+        <!-- Team Details -->
+
+        <div class="team-card">
+
+
+            <div class="card-title">
+
+                TEAM DETAILS
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Team Name
+                </span>
+
+                <strong id="teamName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Team Code
+                </span>
+
+                <strong
+                    id="teamCode"
+                    class="team-code"
+                >
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Track
+                </span>
+
+                <strong id="track">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Team Size
+                </span>
+
+                <strong id="teamSize">
+                    —
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Event Details -->
+
+        <div class="event-card">
+
+
+            <div class="card-title">
+
+                EVENT DETAILS
+
+            </div>
+
+
+            <div class="event-details">
+
+                <div>
+
+                    <span>
+                        DATE
+                    </span>
+
+                    <strong>
+                        24 August 2026
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TIME
+                    </span>
+
+                    <strong>
+                        8:00 AM
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        VENUE
+                    </span>
+
+                    <strong>
+                        SIMATS ENGINEERING
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Important Message -->
+
+        <div class="important-message">
+
+            <strong>
+                Important
+            </strong>
+
+            <p>
+
+                Please save your Team Code.
+                It will be required for
+                team identification and
+                event-related communication.
+
+            </p>
+
+        </div>
+
+
+        <!-- WhatsApp -->
+
+        <div class="whatsapp-section">
+
+
+            <h2>
+                Join the Official WhatsApp Group
+            </h2>
+
+
+            <p>
+
+                Join the NeuralX 2026 WhatsApp group
+                for important announcements,
+                updates and event communication.
+
+            </p>
+
+
+            <a
+                id="whatsappButton"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp-button"
+            >
+
+                JOIN WHATSAPP GROUP
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- Organizer -->
+
+        <div class="organizer">
+
+            Organized by
+
+            <strong>
+                Department of Medical Electronics
+            </strong>
+
+            <span>
+                SIMATS ENGINEERING
+            </span>
+
+        </div>
+
+
+        <!-- Back -->
+
+        <a
+            href="../index.html"
+            class="home-link"
+        >
+
+            ← Back to NeuralX
+
+        </a>
+
+
+    </main>
+
+
+    <script>
+
+        /*
+            Get registration data saved by register.js
+        */
+
+        const savedData =
+            sessionStorage.getItem(
+                "neuralXRegistration"
+            );
+
+
+        /*
+            If someone directly opens success.html
+            without registering, send them back
+            to the registration page.
+        */
+
+        if (!savedData) {
+
+            window.location.href =
+                "/pages/register.html";
+
+        }
+
+
+        else {
+
+            const data =
+                JSON.parse(savedData);
+
+
+            document.getElementById(
+                "teamName"
+            ).textContent =
+                data.teamName || "—";
+
+
+            document.getElementById(
+                "teamCode"
+            ).textContent =
+                data.teamId || "—";
+
+
+            document.getElementById(
+                "track"
+            ).textContent =
+                data.track || "—";
+
+
+            document.getElementById(
+                "teamSize"
+            ).textContent =
+                data.teamSize || "—";
+
+        }
+
+
+        /*
+            WhatsApp group link
+
+            REPLACE THIS WITH YOUR ACTUAL
+            WHATSAPP GROUP INVITATION LINK.
+        */
+
+        const whatsappGroupLink =
+            "https://chat.whatsapp.com/IKhZ1uWzwlIKhHKzMvDnxW?s=sh&p=a&ilr=0";
+
+
+        document.getElementById(
+            "whatsappButton"
+        ).href =
+            whatsappGroupLink;
+
+    </script>
+
+
+</body>
+
+</html>

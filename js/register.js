@@ -30,16 +30,11 @@ function generateMemberFields() {
     const teamSize =
         parseInt(teamSizeSelect.value);
 
-
     membersContainer.innerHTML = "";
 
-
     if (!teamSize) {
-
         return;
-
     }
-
 
     /*
         Team lead is already counted.
@@ -54,10 +49,8 @@ function generateMemberFields() {
         = Lead + Member 2 + Member 3 + Member 4
     */
 
-
     const numberOfMembers =
         teamSize - 1;
-
 
     for (
         let i = 2;
@@ -78,14 +71,11 @@ function generateMemberFields() {
 
 function createMemberCard(memberNumber) {
 
-
     const memberCard =
         document.createElement("div");
 
-
     memberCard.className =
         "member-card";
-
 
     memberCard.innerHTML = `
 
@@ -199,7 +189,6 @@ function createMemberCard(memberNumber) {
 
     `;
 
-
     membersContainer.appendChild(
         memberCard
     );
@@ -216,7 +205,6 @@ registrationForm.addEventListener(
     async function (event) {
 
         event.preventDefault();
-
 
         showMessage(
             "Submitting your registration...",
@@ -311,7 +299,6 @@ registrationForm.addEventListener(
 
             memberCards.forEach(
                 function (card) {
-
 
                     const name =
                         card
@@ -471,18 +458,46 @@ registrationForm.addEventListener(
 
             if (response.ok) {
 
+                /*
+                    Store registration details temporarily
+                    so success.html can display them.
+                */
 
-                showMessage(
-                    `✓ ${result.message} Team ID: ${result.team_id}`,
-                    "success"
+                const successData = {
+
+                    teamName:
+                        teamName,
+
+                    teamId:
+                        result.team_id,
+
+                    track:
+                        track,
+
+                    teamSize:
+                        teamSize,
+
+                    leadName:
+                        leadName
+
+                };
+
+
+                sessionStorage.setItem(
+                    "neuralXRegistration",
+                    JSON.stringify(successData)
                 );
 
 
-                registrationForm.reset();
+                /*
+                    Redirect to separate success page.
+                */
+
+                window.location.href =
+                    "/pages/success.html";
 
 
-                membersContainer.innerHTML = "";
-
+                return;
 
             }
 
@@ -505,7 +520,6 @@ registrationForm.addEventListener(
         }
 
         catch (error) {
-
 
             console.error(
                 "Registration Error:",

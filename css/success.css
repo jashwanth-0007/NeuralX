@@ -1,0 +1,615 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 229, 255, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(180, 0, 255, 0.08),
+            transparent 30%
+        ),
+        #050609;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.background-grid {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.15;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        60px 60px;
+
+}
+
+
+.glow {
+
+    position: fixed;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+}
+
+
+.glow-one {
+
+    top: -150px;
+
+    left: -150px;
+
+    background:
+        rgba(0, 229, 255, 0.12);
+
+}
+
+
+.glow-two {
+
+    bottom: -150px;
+
+    right: -150px;
+
+    background:
+        rgba(180, 0, 255, 0.12);
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.success-container {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    padding: 45px;
+
+    background:
+        rgba(8, 11, 16, 0.92);
+
+    border:
+        1px solid rgba(0, 229, 255, 0.15);
+
+    box-shadow:
+        0 0 60px rgba(0, 229, 255, 0.05);
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.logo span {
+
+    color: #00e5ff;
+
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+   ========================================================= */
+
+.success-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+        2px solid #00e5ff;
+
+    border-radius: 50%;
+
+    color: #00e5ff;
+
+    font-size: 38px;
+
+    box-shadow:
+        0 0 30px
+        rgba(0, 229, 255, 0.2);
+
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.success-description {
+
+    color: #999999;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.team-card,
+.event-card {
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    text-align: left;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.card-title {
+
+    color: #00e5ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   TEAM DETAILS
+   ========================================================= */
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+
+}
+
+
+.detail-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.detail-row span {
+
+    color: #888888;
+
+}
+
+
+.detail-row strong {
+
+    color: #ffffff;
+
+    text-align: right;
+
+}
+
+
+.detail-row .team-code {
+
+    color: #00e5ff;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   EVENT DETAILS
+   ========================================================= */
+
+.event-details {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.event-details div {
+
+    padding: 15px;
+
+    background:
+        rgba(0, 229, 255, 0.03);
+
+    border:
+        1px solid rgba(0, 229, 255, 0.08);
+
+}
+
+
+.event-details span {
+
+    display: block;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.event-details strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   IMPORTANT MESSAGE
+   ========================================================= */
+
+.important-message {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    text-align: left;
+
+    border-left:
+        3px solid #00e5ff;
+
+    background:
+        rgba(0, 229, 255, 0.03);
+
+}
+
+
+.important-message strong {
+
+    color: #00e5ff;
+
+}
+
+
+.important-message p {
+
+    margin-top: 8px;
+
+    color: #999999;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.whatsapp-section {
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+}
+
+
+.whatsapp-section h2 {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.whatsapp-section p {
+
+    color: #888888;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+.whatsapp-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        14px 24px;
+
+    background:
+        #25D366;
+
+    color:
+        #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.whatsapp-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(37, 211, 102, 0.25);
+
+}
+
+
+/* =========================================================
+   ORGANIZER
+   ========================================================= */
+
+.organizer {
+
+    margin-top: 30px;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.8;
+
+}
+
+
+.organizer strong {
+
+    display: block;
+
+    color: #bbbbbb;
+
+    font-weight: 500;
+
+}
+
+
+.organizer span {
+
+    display: block;
+
+    color: #00e5ff;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   HOME LINK
+   ========================================================= */
+
+.home-link {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.home-link:hover {
+
+    color: #00e5ff;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .success-container {
+
+        padding: 30px 20px;
+
+    }
+
+
+    h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .event-details {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .detail-row {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+
+    .detail-row strong {
+
+        text-align: left;
+
+    }
+
+}
