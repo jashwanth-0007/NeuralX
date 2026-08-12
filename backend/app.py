@@ -135,14 +135,11 @@ def generate_team_code(track):
     # -----------------------------------------------------
 
     prefixes = {
-
-        "AI": "AI",
-
-        "Full Stack": "FS",
-
-        "Cybersecurity": "CS"
-
-    }
+    "AI": "AI",
+    "Full Stack": "FS",
+    "Cybersecurity": "CS",
+    "HealthTech": "HT"
+}
 
     prefix = prefixes.get(track)
 
@@ -409,14 +406,11 @@ def register_team():
         # =================================================
 
         allowed_tracks = [
-
-            "AI",
-
-            "Full Stack",
-
-            "Cybersecurity"
-
-        ]
+    "AI",
+    "Full Stack",
+    "Cybersecurity",
+    "HealthTech"
+]
 
 
         if track not in allowed_tracks:
