@@ -21,9 +21,9 @@ a {
 }
 
 
-/* =========================================================
-   BACKGROUND
-   ========================================================= */
+/* ============================= */
+/* BACKGROUND */
+/* ============================= */
 
 .background-grid {
     position: fixed;
@@ -31,15 +31,8 @@ a {
     z-index: -5;
 
     background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.025) 1px,
-            transparent 1px
-        );
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
 
     background-size: 60px 60px;
 }
@@ -69,9 +62,9 @@ a {
 }
 
 
-/* =========================================================
-   PARTICLES
-   ========================================================= */
+/* ============================= */
+/* PARTICLES */
+/* ============================= */
 
 .particles span {
     position: fixed;
@@ -138,6 +131,7 @@ a {
 }
 
 @keyframes floatParticle {
+
     0%,
     100% {
         transform: translateY(0);
@@ -151,9 +145,9 @@ a {
 }
 
 
-/* =========================================================
-   NAVBAR
-   ========================================================= */
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
 
 .navbar {
     width: 100%;
@@ -201,7 +195,7 @@ a {
 
     color: #00ffff;
 
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
 }
 
 .navbar nav {
@@ -224,7 +218,7 @@ a {
 .nav-button {
     padding: 11px 20px;
 
-    border: 1px solid rgba(0, 255, 255, 0.5);
+    border: 1px solid rgba(0,255,255,0.5);
 
     color: #00ffff;
 
@@ -237,13 +231,11 @@ a {
     background: #00ffff;
     color: #050508;
 
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
 }
-
-
-/* =========================================================
-   PROBLEM PREVIEW
-   ========================================================= */
+/* ============================= */
+/* PROBLEM PREVIEW */
+/* ============================= */
 
 .problem-preview {
     width: 100%;
@@ -259,6 +251,9 @@ a {
 
     overflow: hidden;
 }
+
+
+/* Background glow */
 
 .problem-preview::before {
     content: "";
@@ -282,6 +277,9 @@ a {
     pointer-events: none;
 }
 
+
+/* Content alignment */
+
 .problem-preview-content {
     width: 100%;
 
@@ -294,6 +292,9 @@ a {
     z-index: 2;
 }
 
+
+/* Heading */
+
 .problem-preview .section-heading {
     width: 100%;
 
@@ -302,15 +303,24 @@ a {
     margin-bottom: 35px;
 }
 
+
+/* Heading label */
+
 .problem-preview .section-heading > span {
     display: block;
 
     margin-bottom: 20px;
 }
 
+
+/* Heading */
+
 .problem-preview .section-heading h2 {
     margin-top: 0;
 }
+
+
+/* Description */
 
 .problem-preview .section-heading p {
     max-width: 620px;
@@ -318,10 +328,14 @@ a {
     margin-top: 25px;
 }
 
+
+/* Button */
+
 .problem-preview .primary-button {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -329,14 +343,42 @@ a {
     margin-top: 10px;
 }
 
+
+/* Button arrow */
+
 .problem-preview .primary-button span {
     margin-left: 5px;
 }
 
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1000px) {
+
+    .problem-preview {
+        padding: 110px 7%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .problem-preview {
+        padding: 90px 5%;
+    }
+
+    .problem-preview .section-heading {
+        max-width: 100%;
+    }
+
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
 
 .hero {
     min-height: 100vh;
@@ -360,13 +402,12 @@ a {
 
 .event-tag {
     display: inline-flex;
-
     align-items: center;
     gap: 10px;
 
     padding: 8px 14px;
 
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0,255,255,0.2);
 
     color: #aaa;
 
@@ -403,7 +444,7 @@ a {
 
     -webkit-text-stroke: 1px #00ffff;
 
-    text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 30px rgba(0,255,255,0.3);
 }
 
 .hero h2 {
@@ -434,7 +475,6 @@ a {
 
 .hero-buttons {
     display: flex;
-
     gap: 15px;
 
     margin-top: 35px;
@@ -458,7 +498,7 @@ a {
 }
 
 .primary-button:hover {
-    box-shadow: 0 0 35px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 35px rgba(0,255,255,0.5);
 
     transform: translateY(-3px);
 }
@@ -475,7 +515,6 @@ a {
 
 .secondary-button:hover {
     border-color: #b900ff;
-
     color: #ffffff;
 }
 
@@ -489,7 +528,6 @@ a {
 
 .hero-info div {
     display: flex;
-
     flex-direction: column;
 
     gap: 5px;
@@ -512,9 +550,9 @@ a {
 }
 
 
-/* =========================================================
-   NEURAL VISUAL
-   ========================================================= */
+/* ============================= */
+/* NEURAL VISUAL */
+/* ============================= */
 
 .neural-visual {
     width: 400px;
@@ -539,23 +577,22 @@ a {
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     background:
         radial-gradient(
             circle,
-            rgba(0, 255, 255, 0.3),
-            rgba(0, 255, 255, 0.03) 60%,
+            rgba(0,255,255,0.3),
+            rgba(0,255,255,0.03) 60%,
             transparent 70%
         );
 
-    border: 1px solid rgba(0, 255, 255, 0.7);
+    border: 1px solid rgba(0,255,255,0.7);
 
     box-shadow:
-        0 0 40px rgba(0, 255, 255, 0.4),
-        inset 0 0 30px rgba(0, 255, 255, 0.2);
+        0 0 40px rgba(0,255,255,0.4),
+        inset 0 0 30px rgba(0,255,255,0.2);
 
     z-index: 5;
 }
@@ -578,7 +615,7 @@ a {
 
     transform: translate(-50%, -50%);
 
-    border: 1px solid rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0,255,255,0.15);
 
     border-radius: 50%;
 }
@@ -594,7 +631,7 @@ a {
     width: 310px;
     height: 310px;
 
-    border-color: rgba(185, 0, 255, 0.15);
+    border-color: rgba(185,0,255,0.15);
 
     animation: rotateReverse 18s linear infinite;
 }
@@ -646,6 +683,7 @@ a {
 }
 
 @keyframes rotate {
+
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
@@ -656,6 +694,7 @@ a {
 }
 
 @keyframes rotateReverse {
+
     from {
         transform: translate(-50%, -50%) rotate(360deg);
     }
@@ -666,9 +705,9 @@ a {
 }
 
 
-/* =========================================================
-   GENERAL SECTIONS
-   ========================================================= */
+/* ============================= */
+/* GENERAL SECTIONS */
+/* ============================= */
 
 .section {
     padding: 130px 7%;
@@ -713,9 +752,9 @@ a {
 }
 
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
+/* ============================= */
+/* ABOUT */
+/* ============================= */
 
 .about-grid {
     display: grid;
@@ -732,7 +771,7 @@ a {
 
     border: 1px solid #202025;
 
-    background: rgba(255, 255, 255, 0.015);
+    background: rgba(255,255,255,0.015);
 
     position: relative;
 
@@ -770,202 +809,33 @@ a {
 }
 
 
-/* =========================================================
-   ORGANIZER
-   ========================================================= */
-
-.organizer-text {
-    margin-top: 22px;
-
-    margin-bottom: 24px;
-
-    position: relative;
-}
-
-.organizer-label {
-    display: block;
-
-    margin-bottom: 6px;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-
-    text-transform: uppercase;
-
-    color: #00e5ff;
-}
-
-.organizer-name {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    letter-spacing: 0.8px;
-
-    color: #b8b8b8;
-}
-
-.organizer-name strong {
-    color: #ffffff;
-
-    font-weight: 600;
-}
-
-.organizer-divider {
-    color: #00e5ff;
-
-    font-size: 16px;
-}
-
-
-/* =========================================================
-   TRACKS / DOMAINS
-   ========================================================= */
+/* ============================= */
+/* TRACKS */
+/* ============================= */
 
 .tracks-section {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255,255,255,0.01);
 }
-
-.tracks {
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0;
-
-    padding: 130px 7%;
-
-    position: relative;
-
-    overflow: visible;
-}
-
-.tracks .section-heading {
-    width: 100%;
-
-    max-width: 900px;
-
-    margin: 0 auto 60px;
-
-    text-align: left;
-}
-
-.tracks .section-heading > span {
-    display: block;
-
-    color: #00ffff;
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-}
-
-.tracks .section-heading h2 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: clamp(45px, 6vw, 70px);
-
-    line-height: 1;
-
-    margin: 0;
-}
-
-.tracks .section-heading h2 span {
-    color: #b900ff;
-}
-
-.tracks .section-heading p {
-    color: #666;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-
-    margin-top: 25px;
-
-    max-width: 600px;
-}
-
-
-/* =========================================================
-   TRACK GRID
-   ========================================================= */
 
 .tracks-grid {
-    width: 100%;
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    grid-template-rows: repeat(2, auto);
-
-    gap: 24px;
-
-    position: static;
-
-    left: auto;
-
-    right: auto;
-
-    transform: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-
-/* =========================================================
-   TRACK CARD
-   ========================================================= */
-
 .track-card {
-    width: 100%;
+    min-height: 270px;
 
-    min-width: 0;
-
-    max-width: none;
-
-    min-height: 340px;
-
-    padding: 38px;
-
-    margin: 0;
+    padding: 30px;
 
     border: 1px solid #202025;
 
-    background: rgba(255, 255, 255, 0.012);
-
     position: relative;
-
-    display: flex;
-
-    flex-direction: column;
 
     overflow: hidden;
 
-    box-sizing: border-box;
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease;
+    transition: 0.4s;
 }
 
 .track-card::before {
@@ -973,117 +843,81 @@ a {
 
     position: absolute;
 
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
 
-    right: -140px;
-    top: -140px;
+    top: -80px;
+    right: -80px;
 
     background: #00ffff;
 
-    filter: blur(120px);
+    filter: blur(100px);
 
     opacity: 0;
 
-    transition: opacity 0.35s ease;
-
-    pointer-events: none;
+    transition: 0.4s;
 }
 
 .track-card:hover {
-    transform: translateY(-6px);
+    border-color: #00ffff;
 
-    border-color: rgba(0, 255, 255, 0.45);
+    transform: translateY(-5px);
 }
 
 .track-card:hover::before {
-    opacity: 0.08;
+    opacity: 0.2;
 }
-
-.track-card.active {
-    border-color: rgba(0, 255, 255, 0.7);
-}
-
-
-/* =========================================================
-   TRACK ICON
-   ========================================================= */
 
 .track-icon {
-    width: 62px;
-    height: 62px;
-
-    flex: 0 0 62px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #29292f;
+    border: 1px solid #333;
 
     color: #00ffff;
 
-    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
 
-    font-size: 14px;
-
-    letter-spacing: 1px;
+    margin-bottom: 40px;
 }
 
+.track-card h3 {
+    font-family: "Space Grotesk";
 
-/* =========================================================
-   TRACK CONTENT
-   ========================================================= */
-
-.track-content {
-    position: relative;
-
-    margin-top: auto;
-
-    padding-top: 45px;
-
-    padding-right: 20px;
+    font-size: 23px;
 }
 
-.track-content h3 {
-    font-family: "Space Grotesk", sans-serif;
+.track-card p {
+    color: #777;
 
-    font-size: 28px;
-
-    line-height: 1.2;
-
-    margin-bottom: 16px;
-}
-
-.track-content p {
-    max-width: 520px;
-
-    color: #666;
-
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.7;
+
+    margin-top: 15px;
+
+    max-width: 300px;
 }
 
 .track-number {
     position: absolute;
 
-    right: 0;
-
-    bottom: 0;
+    bottom: 25px;
+    right: 30px;
 
     color: #333;
-
-    font-family: "Space Grotesk", sans-serif;
 
     font-size: 12px;
 }
 
 
-/* =========================================================
-   TIMELINE
-   ========================================================= */
+/* ============================= */
+/* TIMELINE */
+/* ============================= */
 
 .timeline {
     max-width: 900px;
@@ -1111,9 +945,7 @@ a {
     position: absolute;
 
     left: 14px;
-
     top: 60px;
-
     bottom: -30px;
 
     width: 1px;
@@ -1173,19 +1005,18 @@ a {
 }
 
 
-/* =========================================================
-   PRIZES
-   ========================================================= */
+/* ============================= */
+/* PRIZES */
+/* ============================= */
 
 .prizes-section {
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255,255,255,0.01);
 }
 
 .prizes {
     display: flex;
 
     align-items: end;
-
     justify-content: center;
 
     gap: 15px;
@@ -1222,7 +1053,7 @@ a {
 .prize-card.first {
     min-height: 330px;
 
-    border-color: rgba(0, 255, 255, 0.5);
+    border-color: rgba(0,255,255,0.5);
 }
 
 .prize-position {
@@ -1244,9 +1075,9 @@ a {
 }
 
 
-/* =========================================================
-   REGISTER
-   ========================================================= */
+/* ============================= */
+/* REGISTER */
+/* ============================= */
 
 .register-section {
     padding: 150px 7%;
@@ -1313,9 +1144,9 @@ a {
 }
 
 
-/* =========================================================
-   FAQ
-   ========================================================= */
+/* ============================= */
+/* FAQ */
+/* ============================= */
 
 .faq-container {
     max-width: 900px;
@@ -1384,9 +1215,9 @@ a {
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 
 footer {
     padding: 60px 7% 30px;
@@ -1443,9 +1274,9 @@ footer p {
 }
 
 
-/* =========================================================
-   RESPONSIVE - TABLET
-   ========================================================= */
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media (max-width: 1000px) {
 
@@ -1471,50 +1302,16 @@ footer p {
         transform: scale(0.8);
     }
 
+    .tracks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Tracks stay 2 x 2 on tablet */
-    .tracks {
-        padding: 110px 5%;
-    }
-
-    .tracks .section-heading {
-        max-width: 760px;
-
-        margin-bottom: 50px;
-    }
-
-    .tracks-grid {
-        width: 100%;
-
-        max-width: 900px;
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 20px;
-    }
-
-    .track-card {
-        min-height: 320px;
-
-        padding: 30px;
-    }
-
-    .track-content h3 {
-        font-size: 24px;
-    }
-
-    .problem-preview {
-        padding: 110px 7%;
-    }
 }
 
-
-/* =========================================================
-   RESPONSIVE - MOBILE
-   ========================================================= */
 
 @media (max-width: 650px) {
 
@@ -1528,7 +1325,6 @@ footer p {
 
     .hero {
         padding-left: 5%;
-
         padding-right: 5%;
     }
 
@@ -1548,7 +1344,6 @@ footer p {
 
     .neural-visual {
         width: 300px;
-
         height: 300px;
 
         transform: scale(0.75);
@@ -1558,53 +1353,8 @@ footer p {
         padding: 90px 5%;
     }
 
-    .problem-preview {
-        padding: 90px 5%;
-    }
-
-    .problem-preview .section-heading {
-        max-width: 100%;
-    }
-
-    /* One card per row on mobile */
-    .tracks {
-        padding: 90px 5%;
-    }
-
-    .tracks .section-heading {
-        max-width: 100%;
-
-        margin-bottom: 40px;
-    }
-
     .tracks-grid {
-        width: 100%;
-
         grid-template-columns: 1fr;
-
-        grid-template-rows: auto;
-
-        gap: 16px;
-    }
-
-    .track-card {
-        min-height: 290px;
-
-        padding: 28px;
-    }
-
-    .track-content {
-        padding-top: 35px;
-
-        padding-right: 10px;
-    }
-
-    .track-content h3 {
-        font-size: 23px;
-    }
-
-    .track-content p {
-        font-size: 13px;
     }
 
     .prizes {
@@ -1641,339 +1391,332 @@ footer p {
     .footer-links {
         flex-wrap: wrap;
     }
+
 }
-/* =========================================================
-   NEURALX - FINAL DOMAIN / TRACKS LAYOUT
-   ========================================================= */
-
-.tracks-section {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-}
-
-
-/* Main Tracks Section */
+/* ============================= */
+/* TRACKS */
+/* ============================= */
 
 .tracks {
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
 
-    margin: 0 !important;
+    padding: 130px 7%;
 
-    padding: 120px 4% 140px !important;
-
-    box-sizing: border-box !important;
-
-    overflow: visible !important;
+    position: relative;
 }
 
-
-/* =========================================================
-   HEADING - LEFT SIDE
-   ========================================================= */
 
 .tracks .section-heading {
-    width: 100% !important;
-    max-width: 100% !important;
+    max-width: 700px;
 
-    margin: 0 0 60px 0 !important;
-
-    padding: 0 !important;
-
-    text-align: left !important;
-
-    box-sizing: border-box !important;
+    margin-bottom: 55px;
 }
+
 
 .tracks .section-heading > span {
-    display: block !important;
+    display: block;
 
-    margin-bottom: 18px !important;
+    color: #00ffff;
 
-    color: #00ffff !important;
+    font-size: 10px;
 
-    font-size: 11px !important;
+    letter-spacing: 4px;
 
-    letter-spacing: 4px !important;
-
-    text-align: left !important;
+    margin-bottom: 20px;
 }
+
 
 .tracks .section-heading h2 {
-    margin: 0 !important;
+    font-family: "Space Grotesk", sans-serif;
 
-    padding: 0 !important;
+    font-size: clamp(
+        45px,
+        6vw,
+        70px
+    );
 
-    font-family: "Space Grotesk", sans-serif !important;
+    line-height: 1;
 
-    font-size: clamp(45px, 5vw, 72px) !important;
-
-    line-height: 1 !important;
-
-    text-align: left !important;
+    margin: 0;
 }
+
 
 .tracks .section-heading h2 span {
-    color: #b900ff !important;
+    color: #b900ff;
 }
+
 
 .tracks .section-heading p {
-    margin: 25px 0 0 0 !important;
+    color: #666;
 
-    padding: 0 !important;
+    font-size: 13px;
 
-    max-width: 800px !important;
+    line-height: 1.8;
 
-    color: #777 !important;
+    margin-top: 25px;
 
-    font-size: 14px !important;
-
-    line-height: 1.7 !important;
-
-    text-align: left !important;
+    max-width: 600px;
 }
 
 
-/* =========================================================
-   DOMAIN GRID - FULL WIDTH
-   ========================================================= */
+/* ============================= */
+/* TRACK GRID */
+/* ============================= */
 
-.tracks .tracks-grid {
-    width: 100% !important;
+.tracks-grid {
+    width: 100%;
 
-    max-width: none !important;
+    max-width: 1250px;
 
-    margin: 0 !important;
+    margin: 0 auto;
 
-    padding: 0 !important;
-
-    display: grid !important;
+    display: grid;
 
     grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr) !important;
+        repeat(3, 1fr);
 
-    grid-template-rows:
-        minmax(360px, 1fr)
-        minmax(360px, 1fr) !important;
-
-    gap: 22px !important;
-
-    position: static !important;
-
-    left: auto !important;
-
-    right: auto !important;
-
-    transform: none !important;
-
-    box-sizing: border-box !important;
+    gap: 20px;
 }
 
 
-/* =========================================================
-   ALL DOMAIN CARDS
-   ========================================================= */
+/* ============================= */
+/* TRACK CARD */
+/* ============================= */
 
-.tracks .tracks-grid .track-card {
-    width: 100% !important;
+.track-card {
+    min-height: 335px;
 
-    max-width: none !important;
+    padding: 38px;
 
-    min-width: 0 !important;
+    border: 1px solid #202025;
 
-    min-height: 360px !important;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.012
+        );
 
-    margin: 0 !important;
+    position: relative;
 
-    padding: 40px !important;
+    display: flex;
 
-    box-sizing: border-box !important;
+    flex-direction: column;
 
-    display: flex !important;
+    justify-content: space-between;
 
-    flex-direction: column !important;
+    overflow: hidden;
 
-    position: relative !important;
-
-    overflow: hidden !important;
-
-    grid-column: auto !important;
-
-    grid-row: auto !important;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
 }
 
 
-/* =========================================================
-   FORCE 2 x 2 POSITION
-   ========================================================= */
+.track-card::before {
+    content: "";
 
-.tracks .tracks-grid .track-card:nth-child(1) {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-}
+    position: absolute;
 
-.tracks .tracks-grid .track-card:nth-child(2) {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-}
+    width: 250px;
+    height: 250px;
 
-.tracks .tracks-grid .track-card:nth-child(3) {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-}
+    right: -140px;
+    top: -140px;
 
-.tracks .tracks-grid .track-card:nth-child(4) {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
+    background: #00ffff;
+
+    filter: blur(120px);
+
+    opacity: 0;
+
+    transition: 0.35s;
 }
 
 
-/* =========================================================
-   CARD ICON
-   ========================================================= */
+.track-card:hover {
 
-.tracks .track-icon {
-    width: 64px !important;
+    transform:
+        translateY(-6px);
 
-    height: 64px !important;
-
-    min-width: 64px !important;
-
-    flex-shrink: 0 !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    box-sizing: border-box !important;
+    border-color:
+        rgba(
+            0,
+            255,
+            255,
+            0.45
+        );
 }
 
 
-/* =========================================================
-   CARD CONTENT
-   ========================================================= */
-
-.tracks .track-content {
-    margin-top: auto !important;
-
-    padding-top: 50px !important;
-
-    padding-right: 30px !important;
-}
-
-.tracks .track-content h3 {
-    margin: 0 0 18px 0 !important;
-
-    font-family: "Space Grotesk", sans-serif !important;
-
-    font-size: clamp(25px, 2.4vw, 36px) !important;
-
-    line-height: 1.15 !important;
-}
-
-.tracks .track-content p {
-    margin: 0 !important;
-
-    max-width: 650px !important;
-
-    color: #777 !important;
-
-    font-size: 15px !important;
-
-    line-height: 1.7 !important;
+.track-card:hover::before {
+    opacity: 0.08;
 }
 
 
-/* =========================================================
-   CARD NUMBER
-   ========================================================= */
+/* First card */
 
-.tracks .track-number {
-    position: absolute !important;
-
-    right: 12px !important;
-
-    bottom: 8px !important;
-
-    color: #333 !important;
-
-    font-size: 12px !important;
+.track-card.active {
+    border-color:
+        rgba(
+            0,
+            255,
+            255,
+            0.7
+        );
 }
 
 
-/* =========================================================
-   DESKTOP - LARGE SCREEN
-   ========================================================= */
+/* ============================= */
+/* ICON */
+/* ============================= */
 
-@media (min-width: 1200px) {
+.track-icon {
+    width: 62px;
+    height: 62px;
 
-    .tracks {
-        padding-left: 4% !important;
+    display: flex;
 
-        padding-right: 4% !important;
-    }
+    align-items: center;
+    justify-content: center;
 
-    .tracks .tracks-grid {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr) !important;
+    border: 1px solid #29292f;
 
-        grid-template-rows:
-            minmax(380px, 1fr)
-            minmax(380px, 1fr) !important;
+    color: #00ffff;
 
-        gap: 24px !important;
-    }
+    font-family:
+        "Space Grotesk",
+        sans-serif;
 
-    .tracks .tracks-grid .track-card {
-        min-height: 380px !important;
+    font-size: 14px;
 
-        padding: 45px !important;
-    }
+    letter-spacing: 1px;
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ============================= */
+/* TRACK CONTENT */
+/* ============================= */
+
+.track-content {
+    position: relative;
+
+    margin-top: 45px;
+}
+
+
+.track-number {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    color: #333;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 12px;
+}
+
+
+.track-content h3 {
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+
+.track-content p {
+    max-width: 400px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media (max-width: 900px) {
 
-    .tracks {
-        padding: 100px 5% 120px !important;
-    }
-
-    .tracks .tracks-grid {
+    .tracks-grid {
         grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr) !important;
-
-        grid-template-rows:
-            minmax(320px, 1fr)
-            minmax(320px, 1fr) !important;
-
-        gap: 18px !important;
+            repeat(2, 1fr);
     }
 
-    .tracks .tracks-grid .track-card {
-        min-height: 320px !important;
-
-        padding: 30px !important;
-    }
-
-    .tracks .track-content {
-        padding-top: 35px !important;
-    }
-
-    .tracks .track-content h3 {
-        font-size: 26px !important;
-    }
 }
 
 
+@media (max-width: 600px) {
+
+    .tracks {
+        padding: 90px 5%;
+    }
+
+
+    .tracks-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .track-card {
+        min-height: 300px;
+
+        padding: 30px;
+    }
+
+}
+.organizer-text {
+    margin-top: 22px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.organizer-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00e5ff;
+}
+
+.organizer-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: #b8b8b8;
+}
+
+.organizer-name strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.organizer-divider {
+    color: #00e5ff;
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+    .tracks-grid,
+    .domains-grid {
+        grid-template-columns: 1fr;
+    }
+}
