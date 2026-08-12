@@ -1607,3 +1607,132 @@ footer p {
         flex-wrap: wrap;
     }
 }
+/* =========================================================
+   FINAL FIX - MAKE TRACKS USE FULL PAGE WIDTH
+   ========================================================= */
+
+.tracks {
+    width: 100vw !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 7vw !important;
+    padding-right: 7vw !important;
+
+    overflow: visible !important;
+}
+
+
+/* Force the grid out of any narrow parent container */
+
+.tracks-grid {
+    position: relative !important;
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: 86vw !important;
+    max-width: 1250px !important;
+
+    margin: 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 24px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Make every card equal */
+
+.tracks-grid .track-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    min-height: 350px !important;
+
+    box-sizing: border-box !important;
+
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+
+/* Keep the content nicely positioned */
+
+.tracks-grid .track-content {
+    margin-top: auto !important;
+
+    padding-top: 50px !important;
+    padding-right: 20px !important;
+}
+
+.tracks-grid .track-content h3 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+}
+
+.tracks-grid .track-content p {
+    max-width: 500px !important;
+
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .tracks {
+        width: 100% !important;
+
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    .tracks-grid {
+        left: 0 !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .tracks {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .tracks-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 16px !important;
+    }
+
+    .tracks-grid .track-card {
+        min-height: 300px !important;
+    }
+
+}
