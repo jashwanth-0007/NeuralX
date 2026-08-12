@@ -1,4 +1,7 @@
 import os
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 from flask import (
     Flask,
@@ -30,6 +33,527 @@ BASE_DIR = os.path.dirname(
 app = Flask(__name__)
 
 CORS(app)
+
+
+# =========================================================
+# EMAIL CONFIGURATION
+# =========================================================
+
+SMTP_HOST = os.environ.get(
+    "SMTP_HOST",
+    "smtp.gmail.com"
+)
+
+SMTP_PORT = int(
+    os.environ.get(
+        "SMTP_PORT",
+        587
+    )
+)
+
+SMTP_EMAIL = os.environ.get(
+    "SMTP_EMAIL",
+    ""
+)
+
+SMTP_PASSWORD = os.environ.get(
+    "SMTP_PASSWORD",
+    ""
+)
+
+WHATSAPP_GROUP_LINK = os.environ.get(
+    "WHATSAPP_GROUP_LINK",
+    "https://chat.whatsapp.com/YOUR_GROUP_LINK"
+)
+
+
+# =========================================================
+# EVENT DETAILS
+# =========================================================
+
+EVENT_DATE = "24 August 2026"
+EVENT_TIME = "8:00 AM"
+EVENT_VENUE = "SIMATS ENGINEERING"
+
+
+# =========================================================
+# SEND REGISTRATION EMAIL
+# =========================================================
+
+def send_registration_email(
+    lead_email,
+    lead_name,
+    team_name,
+    team_code,
+    track
+):
+
+    if not SMTP_EMAIL or not SMTP_PASSWORD:
+
+        print(
+            "Email configuration missing. "
+            "Registration saved, but confirmation email was not sent."
+        )
+
+        return False
+
+    try:
+
+        message = MIMEMultipart(
+            "alternative"
+        )
+
+        message["Subject"] = (
+            f"NeuralX 2026 - Registration Successful | "
+            f"Team {team_code}"
+        )
+
+        message["From"] = SMTP_EMAIL
+
+        message["To"] = lead_email
+
+
+        # -------------------------------------------------
+        # PLAIN TEXT EMAIL
+        # -------------------------------------------------
+
+        plain_text = f"""
+Dear {lead_name},
+
+Congratulations!
+
+Your team has been successfully registered for NeuralX 2026.
+
+TEAM DETAILS
+--------------------------------
+Team Name : {team_name}
+Team Code : {team_code}
+Track     : {track}
+
+EVENT DETAILS
+--------------------------------
+Date      : {EVENT_DATE}
+Time      : {EVENT_TIME}
+Venue     : {EVENT_VENUE}
+
+IMPORTANT
+--------------------------------
+Please report to the venue by {EVENT_TIME}
+on {EVENT_DATE}.
+
+Please keep your Team Code safe.
+Your Team Code will be used for team identification
+and event-related communication.
+
+WHATSAPP GROUP
+--------------------------------
+Join the official NeuralX 2026 WhatsApp group
+using the invitation link below:
+
+{WHATSAPP_GROUP_LINK}
+
+We look forward to welcoming your team to
+NeuralX 2026.
+
+Regards,
+
+NeuralX 2026 Organizing Team
+Department of Medical Electronics
+SIMATS ENGINEERING
+"""
+
+
+        # -------------------------------------------------
+        # HTML EMAIL
+        # -------------------------------------------------
+
+        html_content = f"""
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        NeuralX 2026 Registration
+    </title>
+
+</head>
+
+<body style="
+    margin: 0;
+    padding: 0;
+    background-color: #08090d;
+    font-family: Arial, Helvetica, sans-serif;
+">
+
+    <div style="
+        max-width: 650px;
+        margin: 30px auto;
+        background: #101217;
+        border: 1px solid #1f2a32;
+        color: #ffffff;
+    ">
+
+        <!-- HEADER -->
+
+        <div style="
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #1f2a32;
+        ">
+
+            <h1 style="
+                margin: 0;
+                font-size: 32px;
+                letter-spacing: 4px;
+                color: #ffffff;
+            ">
+                NEURAL<span style="color: #00e5ff;">X</span>
+            </h1>
+
+            <p style="
+                margin: 10px 0 0;
+                color: #00e5ff;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            ">
+                National Level Hackathon
+            </p>
+
+        </div>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div style="
+            padding: 30px;
+        ">
+
+            <h2 style="
+                margin-top: 0;
+                color: #00e5ff;
+            ">
+                Registration Successful!
+            </h2>
+
+            <p style="
+                color: #cccccc;
+                font-size: 15px;
+                line-height: 1.7;
+            ">
+                Dear {lead_name},
+            </p>
+
+            <p style="
+                color: #cccccc;
+                font-size: 15px;
+                line-height: 1.7;
+            ">
+                Congratulations! Your team has been
+                successfully registered for
+                <strong style="color: #ffffff;">
+                    NeuralX 2026
+                </strong>.
+            </p>
+
+
+            <!-- TEAM DETAILS -->
+
+            <div style="
+                margin-top: 25px;
+                padding: 20px;
+                border: 1px solid #24313a;
+                background: #0b0e13;
+            ">
+
+                <h3 style="
+                    margin-top: 0;
+                    color: #00e5ff;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                ">
+                    TEAM DETAILS
+                </h3>
+
+                <p style="
+                    margin: 10px 0;
+                    color: #cccccc;
+                ">
+                    <strong style="color: #ffffff;">
+                        Team Name:
+                    </strong>
+                    {team_name}
+                </p>
+
+                <p style="
+                    margin: 10px 0;
+                    color: #cccccc;
+                ">
+                    <strong style="color: #ffffff;">
+                        Team Code:
+                    </strong>
+
+                    <span style="
+                        color: #00e5ff;
+                        font-size: 20px;
+                        font-weight: bold;
+                    ">
+                        {team_code}
+                    </span>
+                </p>
+
+                <p style="
+                    margin: 10px 0;
+                    color: #cccccc;
+                ">
+                    <strong style="color: #ffffff;">
+                        Track:
+                    </strong>
+                    {track}
+                </p>
+
+            </div>
+
+
+            <!-- EVENT DETAILS -->
+
+            <div style="
+                margin-top: 20px;
+                padding: 20px;
+                border: 1px solid #24313a;
+                background: #0b0e13;
+            ">
+
+                <h3 style="
+                    margin-top: 0;
+                    color: #00e5ff;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                ">
+                    EVENT DETAILS
+                </h3>
+
+                <p style="
+                    margin: 10px 0;
+                    color: #cccccc;
+                ">
+                    <strong style="color: #ffffff;">
+                        Date:
+                    </strong>
+                    24 August 2026
+                </p>
+
+                <p style="
+                    margin: 10px 0;
+                    color: #cccccc;
+                ">
+                    <strong style="color: #ffffff;">
+                        Time:
+                    </strong>
+                    8:00 AM
+                </p>
+
+                <p style="
+                    margin: 10px 0;
+                    color: #cccccc;
+                ">
+                    <strong style="color: #ffffff;">
+                        Venue:
+                    </strong>
+                    SIMATS ENGINEERING
+                </p>
+
+            </div>
+
+
+            <!-- IMPORTANT -->
+
+            <div style="
+                margin-top: 20px;
+                padding: 20px;
+                border-left: 3px solid #00e5ff;
+                background: #0b0e13;
+            ">
+
+                <h3 style="
+                    margin-top: 0;
+                    color: #ffffff;
+                    font-size: 15px;
+                ">
+                    Important
+                </h3>
+
+                <p style="
+                    margin-bottom: 0;
+                    color: #cccccc;
+                    line-height: 1.6;
+                ">
+                    Please report to the venue by
+                    <strong style="color: #ffffff;">
+                        8:00 AM
+                    </strong>
+                    on
+                    <strong style="color: #ffffff;">
+                        24 August 2026
+                    </strong>.
+                    Please keep your Team Code
+                    <strong style="color: #00e5ff;">
+                        {team_code}
+                    </strong>
+                    safe.
+                </p>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+
+            <div style="
+                margin-top: 25px;
+                text-align: center;
+                padding: 25px;
+                background: #0b0e13;
+                border: 1px solid #24313a;
+            ">
+
+                <h3 style="
+                    margin-top: 0;
+                    color: #ffffff;
+                ">
+                    Join the NeuralX 2026 WhatsApp Group
+                </h3>
+
+                <p style="
+                    color: #aaaaaa;
+                    line-height: 1.6;
+                ">
+                    Join the official WhatsApp group
+                    for important announcements,
+                    updates and event communication.
+                </p>
+
+                <a href="{WHATSAPP_GROUP_LINK}"
+                   style="
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 13px 25px;
+                    background: #00e5ff;
+                    color: #000000;
+                    text-decoration: none;
+                    font-weight: bold;
+                    border-radius: 3px;
+                ">
+                    JOIN WHATSAPP GROUP
+                </a>
+
+            </div>
+
+
+            <!-- FOOTER MESSAGE -->
+
+            <p style="
+                margin-top: 30px;
+                color: #aaaaaa;
+                line-height: 1.7;
+            ">
+                We look forward to welcoming your team
+                to NeuralX 2026.
+            </p>
+
+            <p style="
+                color: #ffffff;
+                line-height: 1.7;
+            ">
+                Regards,<br>
+
+                <strong>
+                    NeuralX 2026 Organizing Team
+                </strong>
+                <br>
+
+                <span style="color: #00e5ff;">
+                    Department of Medical Electronics
+                </span>
+                <br>
+
+                SIMATS ENGINEERING
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+"""
+
+
+        # -------------------------------------------------
+        # ATTACH EMAIL CONTENT
+        # -------------------------------------------------
+
+        message.attach(
+            MIMEText(
+                plain_text,
+                "plain"
+            )
+        )
+
+        message.attach(
+            MIMEText(
+                html_content,
+                "html"
+            )
+        )
+
+
+        # -------------------------------------------------
+        # CONNECT TO SMTP SERVER
+        # -------------------------------------------------
+
+        with smtplib.SMTP(
+            SMTP_HOST,
+            SMTP_PORT
+        ) as server:
+
+            server.starttls()
+
+            server.login(
+                SMTP_EMAIL,
+                SMTP_PASSWORD
+            )
+
+            server.sendmail(
+                SMTP_EMAIL,
+                lead_email,
+                message.as_string()
+            )
+
+
+        print(
+            f"Registration email sent successfully "
+            f"to {lead_email}"
+        )
+
+        return True
+
+
+    except Exception as error:
+
+        print(
+            "Email sending error:",
+            error
+        )
+
+        return False
 
 
 # =========================================================
@@ -131,10 +655,6 @@ def generate_team_code(
     track
 ):
 
-    # -----------------------------------------------------
-    # TRACK PREFIX
-    # -----------------------------------------------------
-
     prefixes = {
 
         "AI": "AI",
@@ -145,9 +665,7 @@ def generate_team_code(
 
     }
 
-
     prefix = prefixes.get(track)
-
 
     if not prefix:
 
@@ -174,7 +692,6 @@ def generate_team_code(
 
     )
 
-
     result = cursor.fetchone()
 
 
@@ -186,11 +703,9 @@ def generate_team_code(
 
         next_number = 1
 
-
     else:
 
         last_team_code = result[0]
-
 
         try:
 
@@ -236,17 +751,13 @@ def generate_team_code(
 
         )
 
-
         existing = cursor.fetchone()
-
 
         if not existing:
 
             break
 
-
         next_number += 1
-
 
         team_code = (
 
@@ -281,7 +792,6 @@ def register_team():
 
         data = request.get_json()
 
-
         if not data:
 
             return jsonify({
@@ -303,11 +813,9 @@ def register_team():
             ""
         ).strip()
 
-
         team_size = data.get(
             "teamSize"
         )
-
 
         track = data.get(
             "track",
@@ -324,30 +832,25 @@ def register_team():
             ""
         ).strip()
 
-
         lead_email = data.get(
             "leadEmail",
             ""
         ).strip()
-
 
         lead_phone = data.get(
             "leadPhone",
             ""
         ).strip()
 
-
         college = data.get(
             "college",
             ""
         ).strip()
 
-
         lead_reg_no = data.get(
             "regNo",
             ""
         ).strip()
-
 
         degree = data.get(
             "degree",
@@ -463,7 +966,6 @@ def register_team():
 
         expected_members = team_size - 1
 
-
         if len(members) != expected_members:
 
             return jsonify({
@@ -503,9 +1005,7 @@ def register_team():
 
         )
 
-
         existing_team = cursor.fetchone()
-
 
         if existing_team:
 
@@ -535,9 +1035,7 @@ def register_team():
 
         )
 
-
         existing_email = cursor.fetchone()
-
 
         if existing_email:
 
@@ -624,11 +1122,8 @@ def register_team():
 
 
         cursor.execute(
-
             team_query,
-
             team_values
-
         )
 
 
@@ -666,30 +1161,25 @@ def register_team():
 
         for member in members:
 
-
             member_name = member.get(
                 "name",
                 ""
             ).strip()
-
 
             member_email = member.get(
                 "email",
                 ""
             ).strip()
 
-
             member_college = member.get(
                 "college",
                 ""
             ).strip()
 
-
             member_reg_no = member.get(
                 "regNo",
                 ""
             ).strip()
-
 
             member_course = member.get(
                 "course",
@@ -747,40 +1237,72 @@ def register_team():
 
 
         # =================================================
-        # COMMIT
+        # COMMIT DATABASE
         # =================================================
 
         connection.commit()
 
 
         # =================================================
-        # SUCCESS
+        # SEND SUCCESS EMAIL
         # =================================================
+
+        email_sent = send_registration_email(
+
+            lead_email=lead_email,
+
+            lead_name=lead_name,
+
+            team_name=team_name,
+
+            team_code=team_code,
+
+            track=track
+
+        )
+
+
+        # =================================================
+        # SUCCESS RESPONSE
+        # =================================================
+
+        if email_sent:
+
+            message = (
+                "NeuralX registration successful. "
+                "Confirmation email sent successfully."
+            )
+
+        else:
+
+            message = (
+                "NeuralX registration successful, "
+                "but the confirmation email could not be sent. "
+                "Please contact the organizers."
+            )
+
 
         return jsonify({
 
             "status": "success",
 
-            "message":
-                "NeuralX registration successful.",
+            "message": message,
 
-            "team_id":
-                team_code,
+            "team_id": team_code,
 
-            "team_name":
-                team_name,
+            "team_name": team_name,
 
-            "team_size":
-                team_size,
+            "team_size": team_size,
 
-            "track":
-                track
+            "track": track,
+
+            "email_sent": email_sent
 
         }), 201
 
 
     # =====================================================
-    # ERROR
+    # VALUE ERROR
     # =====================================================
 
     except ValueError as error:
@@ -799,6 +1321,10 @@ def register_team():
 
         }), 400
 
+
+    # =====================================================
+    # GENERAL ERROR
+    # =====================================================
 
     except Exception as error:
 
@@ -828,7 +1354,6 @@ def register_team():
         if cursor:
 
             cursor.close()
-
 
         if connection:
 
