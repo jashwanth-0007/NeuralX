@@ -1643,56 +1643,129 @@ footer p {
     }
 }
 /* =========================================================
-   FINAL FIX FOR TRACKS / DOMAINS
+   NEURALX - FINAL DOMAIN / TRACKS LAYOUT
    ========================================================= */
 
-.tracks {
+.tracks-section {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
-    padding: 120px 7% !important;
-    box-sizing: border-box !important;
+    padding: 0 !important;
     overflow: hidden !important;
 }
 
 
-/* Section heading */
+/* Main Tracks Section */
 
-.tracks .section-heading {
+.tracks {
     width: 100% !important;
-    max-width: 900px !important;
-    margin: 0 auto 60px !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 120px 4% 140px !important;
+
     box-sizing: border-box !important;
+
+    overflow: visible !important;
 }
 
 
 /* =========================================================
-   FULL WIDTH 2 x 2 GRID
+   HEADING - LEFT SIDE
+   ========================================================= */
+
+.tracks .section-heading {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 0 60px 0 !important;
+
+    padding: 0 !important;
+
+    text-align: left !important;
+
+    box-sizing: border-box !important;
+}
+
+.tracks .section-heading > span {
+    display: block !important;
+
+    margin-bottom: 18px !important;
+
+    color: #00ffff !important;
+
+    font-size: 11px !important;
+
+    letter-spacing: 4px !important;
+
+    text-align: left !important;
+}
+
+.tracks .section-heading h2 {
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    font-family: "Space Grotesk", sans-serif !important;
+
+    font-size: clamp(45px, 5vw, 72px) !important;
+
+    line-height: 1 !important;
+
+    text-align: left !important;
+}
+
+.tracks .section-heading h2 span {
+    color: #b900ff !important;
+}
+
+.tracks .section-heading p {
+    margin: 25px 0 0 0 !important;
+
+    padding: 0 !important;
+
+    max-width: 800px !important;
+
+    color: #777 !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.7 !important;
+
+    text-align: left !important;
+}
+
+
+/* =========================================================
+   DOMAIN GRID - FULL WIDTH
    ========================================================= */
 
 .tracks .tracks-grid {
-    display: grid !important;
-
     width: 100% !important;
-    max-width: 1200px !important;
 
-    margin: 0 auto !important;
+    max-width: none !important;
+
+    margin: 0 !important;
 
     padding: 0 !important;
+
+    display: grid !important;
 
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1fr) !important;
 
     grid-template-rows:
-        auto
-        auto !important;
+        minmax(360px, 1fr)
+        minmax(360px, 1fr) !important;
 
-    gap: 24px !important;
+    gap: 22px !important;
 
     position: static !important;
 
     left: auto !important;
+
     right: auto !important;
 
     transform: none !important;
@@ -1702,31 +1775,41 @@ footer p {
 
 
 /* =========================================================
-   ALL FOUR CARDS
+   ALL DOMAIN CARDS
    ========================================================= */
 
 .tracks .tracks-grid .track-card {
-    display: flex !important;
-
     width: 100% !important;
+
     max-width: none !important;
+
     min-width: 0 !important;
 
-    min-height: 340px !important;
+    min-height: 360px !important;
 
     margin: 0 !important;
-    padding: 38px !important;
+
+    padding: 40px !important;
 
     box-sizing: border-box !important;
 
-    grid-column: auto !important;
-    grid-row: auto !important;
+    display: flex !important;
+
+    flex-direction: column !important;
 
     position: relative !important;
+
+    overflow: hidden !important;
+
+    grid-column: auto !important;
+
+    grid-row: auto !important;
 }
 
 
-/* Force correct positions */
+/* =========================================================
+   FORCE 2 x 2 POSITION
+   ========================================================= */
 
 .tracks .tracks-grid .track-card:nth-child(1) {
     grid-column: 1 !important;
@@ -1750,63 +1833,108 @@ footer p {
 
 
 /* =========================================================
-   CARD CONTENT
+   CARD ICON
    ========================================================= */
 
 .tracks .track-icon {
-    width: 62px !important;
-    height: 62px !important;
+    width: 64px !important;
+
+    height: 64px !important;
+
+    min-width: 64px !important;
 
     flex-shrink: 0 !important;
 
     display: flex !important;
 
     align-items: center !important;
+
     justify-content: center !important;
+
+    box-sizing: border-box !important;
 }
 
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
 
 .tracks .track-content {
     margin-top: auto !important;
 
-    padding-top: 45px !important;
-    padding-right: 20px !important;
-}
+    padding-top: 50px !important;
 
+    padding-right: 30px !important;
+}
 
 .tracks .track-content h3 {
-    font-size: 28px !important;
+    margin: 0 0 18px 0 !important;
 
-    line-height: 1.2 !important;
+    font-family: "Space Grotesk", sans-serif !important;
 
-    margin-bottom: 16px !important;
+    font-size: clamp(25px, 2.4vw, 36px) !important;
+
+    line-height: 1.15 !important;
 }
 
-
 .tracks .track-content p {
-    max-width: 600px !important;
+    margin: 0 !important;
 
-    font-size: 14px !important;
+    max-width: 650px !important;
+
+    color: #777 !important;
+
+    font-size: 15px !important;
 
     line-height: 1.7 !important;
 }
 
 
 /* =========================================================
-   DESKTOP - MAKE THE GRID WIDER
+   CARD NUMBER
+   ========================================================= */
+
+.tracks .track-number {
+    position: absolute !important;
+
+    right: 12px !important;
+
+    bottom: 8px !important;
+
+    color: #333 !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   DESKTOP - LARGE SCREEN
    ========================================================= */
 
 @media (min-width: 1200px) {
 
+    .tracks {
+        padding-left: 4% !important;
+
+        padding-right: 4% !important;
+    }
+
     .tracks .tracks-grid {
-        width: 100% !important;
-        max-width: 1250px !important;
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        grid-template-rows:
+            minmax(380px, 1fr)
+            minmax(380px, 1fr) !important;
 
         gap: 24px !important;
     }
 
     .tracks .tracks-grid .track-card {
-        min-height: 340px !important;
+        min-height: 380px !important;
+
+        padding: 45px !important;
     }
 }
 
@@ -1818,29 +1946,33 @@ footer p {
 @media (max-width: 900px) {
 
     .tracks {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
+        padding: 100px 5% 120px !important;
     }
 
     .tracks .tracks-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-
         grid-template-columns:
             minmax(0, 1fr)
             minmax(0, 1fr) !important;
+
+        grid-template-rows:
+            minmax(320px, 1fr)
+            minmax(320px, 1fr) !important;
 
         gap: 18px !important;
     }
 
     .tracks .tracks-grid .track-card {
-        min-height: 310px !important;
+        min-height: 320px !important;
 
         padding: 30px !important;
     }
 
+    .tracks .track-content {
+        padding-top: 35px !important;
+    }
+
     .tracks .track-content h3 {
-        font-size: 24px !important;
+        font-size: 26px !important;
     }
 }
 
@@ -1852,13 +1984,24 @@ footer p {
 @media (max-width: 600px) {
 
     .tracks {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
+        padding: 80px 5% 100px !important;
+    }
+
+    .tracks .section-heading {
+        margin-bottom: 40px !important;
+    }
+
+    .tracks .section-heading h2 {
+        font-size: 42px !important;
+
+        line-height: 1.05 !important;
+    }
+
+    .tracks .section-heading p {
+        font-size: 13px !important;
     }
 
     .tracks .tracks-grid {
-        width: 100% !important;
-
         grid-template-columns: 1fr !important;
 
         grid-template-rows:
@@ -1867,31 +2010,27 @@ footer p {
         gap: 16px !important;
     }
 
-
     .tracks .tracks-grid .track-card:nth-child(1),
     .tracks .tracks-grid .track-card:nth-child(2),
     .tracks .tracks-grid .track-card:nth-child(3),
     .tracks .tracks-grid .track-card:nth-child(4) {
 
         grid-column: 1 !important;
+
         grid-row: auto !important;
     }
 
-
     .tracks .tracks-grid .track-card {
-        min-height: 290px !important;
+        min-height: 300px !important;
 
         padding: 28px !important;
     }
 
-
-    .tracks .track-content {
-        padding-top: 35px !important;
-        padding-right: 10px !important;
+    .tracks .track-content h3 {
+        font-size: 24px !important;
     }
 
-
-    .tracks .track-content h3 {
-        font-size: 23px !important;
+    .tracks .track-content p {
+        font-size: 13px !important;
     }
 }
