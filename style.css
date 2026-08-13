@@ -2305,3 +2305,126 @@ footer p {
     }
 
 }
+/* =========================================================
+   BEST PROJECT AWARD
+   ========================================================= */
+
+.domain-award {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 65px auto 0;
+    padding: 30px 35px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    border: 1px solid rgba(0, 255, 255, 0.25);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.025),
+            rgba(185, 0, 255, 0.025)
+        );
+
+    position: relative;
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.domain-award:hover {
+    border-color: rgba(0, 255, 255, 0.55);
+
+    transform: translateY(-3px);
+}
+
+
+/* Icon */
+
+.domain-award-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 255, 255, 0.35);
+
+    color: #00ffff;
+
+    font-size: 22px;
+}
+
+
+/* Content */
+
+.domain-award-content span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #00ffff;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.domain-award-content h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 24px;
+}
+
+
+.domain-award-content p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .domain-award {
+        padding: 25px;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .domain-award-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .domain-award-content h3 {
+        font-size: 20px;
+    }
+
+    .domain-award-content p {
+        font-size: 12px;
+    }
+
+}
