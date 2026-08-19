@@ -1158,3 +1158,220 @@ footer p {
     }
 
 }
+/* =========================================================
+   REGISTRATION CLOSED PAGE
+   ========================================================= */
+
+.registration-closed-page {
+    min-height: 70vh;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* Closed Icon */
+
+.closed-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 255, 255, 0.4);
+
+    color: #00ffff;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 38px;
+    font-weight: 400;
+
+    margin-bottom: 28px;
+}
+
+
+/* Status Label */
+
+.closed-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #00ffff;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* Main Heading */
+
+.registration-closed-page h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(42px, 6vw, 72px);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+}
+
+
+.registration-closed-page h1 strong {
+    display: block;
+
+    color: #b900ff;
+
+    font-weight: 700;
+}
+
+
+/* Description */
+
+.closed-description {
+    margin: 25px 0 0;
+
+    color: #777;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   COORDINATOR DETAILS
+   ========================================================= */
+
+.coordinator-section {
+    margin-top: 40px;
+
+    padding: 28px 42px;
+
+    min-width: 520px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(255, 255, 255, 0.015);
+
+    text-align: center;
+}
+
+
+.coordinator-title {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #00ffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.coordinator-section p {
+    margin: 9px 0;
+
+    color: #777;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.coordinator-section strong {
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+.coordinator-separator {
+    color: #00ffff;
+
+    margin: 0 8px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .registration-closed-page {
+        min-height: 70vh;
+
+        padding: 60px 20px;
+    }
+
+
+    .closed-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 32px;
+    }
+
+
+    .registration-closed-page h1 {
+        font-size: 40px;
+    }
+
+
+    .closed-description {
+        font-size: 13px;
+    }
+
+
+    .coordinator-section {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 25px 18px;
+    }
+
+
+    .coordinator-section p {
+        font-size: 12px;
+    }
+
+}
