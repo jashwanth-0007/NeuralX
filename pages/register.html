@@ -10,9 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Register | NeuralX
-    </title>
+    <title>Register | NeuralX</title>
 
     <link
         rel="stylesheet"
@@ -26,7 +24,9 @@
 
 </head>
 
-<body>
+
+<body class="registration-closed">
+
 
     <!-- ============================= -->
     <!-- BACKGROUND -->
@@ -68,6 +68,7 @@
 
         </a>
 
+
         <nav>
 
             <a href="../index.html">
@@ -91,6 +92,7 @@
 
         </nav>
 
+
         <a
             href="../index.html"
             class="back-button"
@@ -102,419 +104,65 @@
 
 
     <!-- ============================= -->
-    <!-- HEADER -->
+    <!-- REGISTRATION CLOSED -->
     <!-- ============================= -->
 
-    <section class="register-header">
+    <main class="registration-closed-page">
 
-        <span class="section-label">
-            NEURALX 2026
+
+        <div class="closed-icon">
+            ×
+        </div>
+
+
+        <span class="closed-label">
+            REGISTRATION STATUS
         </span>
 
+
         <h1>
-
-            Register Your
-            <span>Team.</span>
-
+            Registrations Are
+            <strong>Closed.</strong>
         </h1>
 
-        <p>
 
-            Build your team, choose your track
-            and get ready for the challenge.
-
+        <p class="closed-description">
+            Registration for NeuralX 2026 is currently closed.
         </p>
 
-    </section>
 
+        <!-- ============================= -->
+        <!-- COORDINATOR DETAILS -->
+        <!-- ============================= -->
 
-    <!-- ============================= -->
-    <!-- REGISTRATION FORM -->
-    <!-- ============================= -->
-     
+        <div class="coordinator-section">
 
-    <main class="registration-container">
+            <span class="coordinator-title">
+                FOR FURTHER DETAILS
+            </span>
 
-        <form
-            id="registrationForm"
-        >
 
-            <!-- ============================= -->
-            <!-- TEAM INFORMATION -->
-            <!-- ============================= -->
+            <p>
+                Student Co-ordinators :
+                <strong>Jeeva Raghul.M</strong>
+                <span class="coordinator-separator">
+                    &
+                </span>
+                <strong>Malavika S</strong>
+            </p>
 
-            <section class="form-section">
 
-                <div class="section-number">
-                    01
-                </div>
+            <p>
+                Contact Number :
+                <strong>63745 97327</strong>
+                <span class="coordinator-separator">
+                    &
+                </span>
+                <strong>8220270590</strong>
+            </p>
 
-                <div class="form-section-content">
+        </div>
 
-                    <span class="form-label">
-                        TEAM INFORMATION
-                    </span>
-
-                    <h2>
-                        Create Your Team
-                    </h2>
-
-                    <p class="section-description">
-                        Enter the basic details of your
-                        hackathon team.
-                    </p>
-
-
-                    <div class="form-grid">
-
-                        <!-- TEAM NAME -->
-
-                        <div class="form-group full-width">
-
-                            <label for="teamName">
-                                Team Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="teamName"
-                                name="teamName"
-                                placeholder="Enter your team name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- TEAM SIZE -->
-
-                        <div class="form-group">
-
-                            <label for="teamSize">
-                                Team Size
-                            </label>
-
-                            <select
-                                id="teamSize"
-                                name="teamSize"
-                                required
-                            >
-
-                                <option value="">
-                                    Select team size
-                                </option>
-
-                                <option value="2">
-                                    2 Members
-                                </option>
-
-                                <option value="3">
-                                    3 Members
-                                </option>
-
-                                <option value="4">
-                                    4 Members
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <!-- TRACK -->
-
-                        <div class="form-group">
-
-                            <label for="track">
-                                Track
-                            </label>
-
-                            <select
-                                id="track"
-                                name="track"
-                                required
-                            >
-
-                                <option value="">
-                                    Select track
-                                </option>
-
-                                <option value="AI">
-                                    Artificial Intelligence
-                                </option>
-
-                                <option value="Full Stack">
-                                    Full Stack
-                                </option>
-
-                                <option value="Cybersecurity">
-                                    Cybersecurity
-                                </option>
-                                <option value="HealthTech">HealthTech</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ============================= -->
-            <!-- TEAM LEAD -->
-            <!-- ============================= -->
-
-            <section class="form-section">
-
-                <div class="section-number">
-                    02
-                </div>
-
-                <div class="form-section-content">
-
-                    <span class="form-label">
-                        TEAM LEAD
-                    </span>
-
-                    <h2>
-                        Team Lead Details
-                    </h2>
-
-                    <p class="section-description">
-                        The team lead will be the primary
-                        contact for the team.
-                    </p>
-
-
-                    <div class="form-grid">
-
-                        <!-- NAME -->
-
-                        <div class="form-group">
-
-                            <label for="leadName">
-                                Full Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="leadName"
-                                name="leadName"
-                                placeholder="Enter full name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- REGISTRATION NUMBER -->
-
-                        <div class="form-group">
-
-                            <label for="regNo">
-                                Registration Number
-                            </label>
-
-                            <input
-                                type="text"
-                                id="regNo"
-                                name="regNo"
-                                placeholder="Enter registration number"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- EMAIL -->
-
-                        <div class="form-group">
-
-                            <label for="leadEmail">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="leadEmail"
-                                name="leadEmail"
-                                placeholder="Enter email address"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- PHONE -->
-
-                        <div class="form-group">
-
-                            <label for="leadPhone">
-                                Phone Number
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="leadPhone"
-                                name="leadPhone"
-                                placeholder="Enter phone number"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- COLLEGE -->
-
-                        <div class="form-group full-width">
-
-                            <label for="college">
-                                College / Institution
-                            </label>
-
-                            <input
-                                type="text"
-                                id="college"
-                                name="college"
-                                placeholder="Enter college or institution"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- DEGREE -->
-
-                        <div class="form-group full-width">
-
-                            <label for="degree">
-                                Degree / Course
-                            </label>
-
-                            <input
-                                type="text"
-                                id="degree"
-                                name="degree"
-                                placeholder="Example: B.Tech CSE"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ============================= -->
-            <!-- TEAM MEMBERS -->
-            <!-- ============================= -->
-
-            <section class="form-section">
-
-                <div class="section-number">
-                    03
-                </div>
-
-                <div class="form-section-content">
-
-                    <span class="form-label">
-                        TEAM MEMBERS
-                    </span>
-
-                    <h2>
-                        Member Details
-                    </h2>
-
-                    <p class="section-description">
-                        Select your team size above.
-                        Member fields will appear automatically.
-                    </p>
-
-
-                    <div
-                        id="membersContainer"
-                    >
-
-                        <!-- MEMBER 02 WILL BE GENERATED HERE -->
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ============================= -->
-            <!-- TERMS -->
-            <!-- ============================= -->
-
-            <section class="terms-section">
-
-                <label class="checkbox-container">
-
-                    <input
-                        type="checkbox"
-                        id="agree"
-                        required
-                    >
-
-                    <span class="custom-checkbox"></span>
-
-                    <span class="terms-text">
-
-                        I agree to the NeuralX rules,
-                        guidelines and code of conduct.
-
-                    </span>
-
-                </label>
-
-            </section>
-
-
-            <!-- ============================= -->
-            <!-- MESSAGE -->
-            <!-- ============================= -->
-
-            <div
-                id="formMessage"
-                class="form-message"
-            ></div>
-
-
-            <!-- ============================= -->
-            <!-- SUBMIT -->
-            <!-- ============================= -->
-
-            <div class="submit-section">
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                >
-
-                    Submit Registration
-
-                    <span>
-                        →
-                    </span>
-
-                </button>
-
-                <p>
-                    Please verify all details before
-                    submitting your registration.
-                </p>
-
-            </div>
-
-        </form>
 
     </main>
 
@@ -529,10 +177,12 @@
             NEURAL<span>X</span>
         </div>
 
+
         <p>
             Where Ideas Connect,
             Innovate &amp; Evolve.
         </p>
+
 
         <div class="copyright">
             © 2026 NeuralX.
@@ -542,9 +192,6 @@
     </footer>
 
 
-    <script src="../js/register.js"></script>
-
 </body>
 
 </html>
-
